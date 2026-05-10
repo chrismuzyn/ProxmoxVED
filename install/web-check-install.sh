@@ -64,7 +64,7 @@ msg_info "Setting up Chromium"
 chmod 755 /usr/bin/chromium
 msg_ok "Setup Chromium"
 
-fetch_and_deploy_gh_release "web-check" "CrazyWolf13/web-check" "tarball"
+fetch_and_deploy_gh_release "web-check" "Lissy93/web-check" "tarball"
 
 msg_info "Installing Web-Check (Patience)"
 cd /opt/web-check
