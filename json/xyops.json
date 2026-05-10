@@ -33,10 +33,6 @@
     },
     "notes": [
         {
-            "text": "Change the default admin password immediately after first login.",
-            "type": "warning"
-        },
-        {
             "text": "A local xySat satellite is started automatically alongside the conductor, allowing jobs to run on this server right away.",
             "type": "info"
         },
