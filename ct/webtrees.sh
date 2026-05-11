@@ -32,8 +32,7 @@ function update_script() {
   if check_for_gh_release "webtrees" "fisharebest/webtrees"; then
     msg_info "Stopping Service"
     PHP_VER=$(php -r 'echo PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;')
-    systemctl stop php${PHP_VER}-fpm
-    systemctl stop caddy
+    systemctl stop caddy php${PHP_VER}-fpm
     msg_ok "Stopped Service"
 
     msg_info "Backing up Data"
