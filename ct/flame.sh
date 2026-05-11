@@ -49,8 +49,11 @@ function update_script() {
 
     msg_info "Rebuilding Application"
     cd /opt/flame
-    $STD npm run dev-init
+    mkdir -p data public
+    touch public/flame.css public/customQueries.json
+    $STD npm install
     cd /opt/flame/client
+    $STD npm install
     $STD npm run build
     cd /opt/flame
     cp -r client/build/. public/
