@@ -19,13 +19,13 @@ fetch_and_deploy_gh_release "flame" "pawelmalak/flame" "tarball"
 
 msg_info "Setting up Flame"
 cd /opt/flame
-$STD npm run init-server
+$STD npm run dev-init
 cd /opt/flame/client
-$STD npm install
 $STD npm run build
 cd /opt/flame
-mkdir -p public data
 cp -r client/build/. public/
+$STD npm rebuild sqlite3
+touch public/flame.css public/customQueries.json
 cat <<EOF >/opt/flame/.env
 NODE_ENV=production
 PASSWORD=

@@ -49,13 +49,12 @@ function update_script() {
 
     msg_info "Rebuilding Application"
     cd /opt/flame
-    $STD npm run init-server
+    $STD npm run dev-init
     cd /opt/flame/client
-    $STD npm install
     $STD npm run build
     cd /opt/flame
-    mkdir -p public
     cp -r client/build/. public/
+    $STD npm rebuild sqlite3
     msg_ok "Rebuilt Application"
 
     msg_info "Starting Service"
